@@ -1,55 +1,79 @@
 import { Link } from "react-router-dom";
 import React from "react";
+
+// Menu items for "Our Products" section
 const menuItems = [
     { title: "زنانه", path: "/women" },
     { title: "مردانه", path: "/men" },
     { title: "بچگانه", path: "/kids" },
-    { title: " کفش/کیف", path: "/shoes" },
+    { title: "کفش/کیف", path: "/shoes" },
 ];
+
 const Footer = () => {
     return (
-        <div className="bg-gray-500 mt-24 w-full text-white" dir="rtl">
-            <div className="flex flex-col-reverse md:flex-row">
+        <footer className="bg-gray-500 text-white mt-24 w-full" dir="rtl">
+            <div className="flex flex-col-reverse md:flex-row md:items-start items-center">
+                
+                {/* Left side: links section */}
                 <div className="w-full md:w-1/2">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-5 sm:p-8 md:p-10">
-                        <div className="flex flex-col gap-3 text-center">
-                            <h1 className="text-xl md:text-2xl  font-bold mb-3">محصولات ما</h1>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-6">
+                        
+                        {/* Our Products */}
+                        <div className="flex flex-col gap-3 items-center md:items-start">
+                            <h1 className="text-xl md:text-2xl font-bold mb-3">محصولات ما</h1>
                             {menuItems.map((item, index) => (
-                                <div key={index} className="flex text-center md:text-right pr-6">
-                                    <Link
-                                        to={item.path}
-                                        className="group hover:text-black "
-                                    >
-                                        {item.title}
-                                    </Link>
-                                </div>
+                                <Link
+                                    key={index}
+                                    to={item.path}
+                                    className="hover:text-black transition-colors"
+                                >
+                                    {item.title}
+                                </Link>
                             ))}
                         </div>
-                        <div className="flex flex-col gap-3 text-center">
+
+                        {/* Brands */}
+                        <div className="flex flex-col gap-3 items-center md:items-start">
                             <h1 className="text-xl md:text-2xl font-bold mb-3">برندها</h1>
                             <ul className="space-y-2 text-md">
-                                <a href={"/brands"}><li>Nike</li></a>
-                                <a href={"/brands"}><li>Adidas</li></a>
-                                <a href={"/brands"}><li>Gucci</li></a>
-                                <a href={"/brands"}><li>Converse</li></a>
+                                {["Nike", "Adidas", "Gucci", "Converse"].map((brand, i) => (
+                                    <li key={i}>
+                                        <Link to="/brands" className="hover:text-black transition-colors">
+                                            {brand}
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
-                        <div className="flex flex-col  text-md text-center">
-                            <h1 className="text-xl md:text-2xl font-bold text-center mb-3">با ما در ارتباط باشید </h1>
-                            <a href="https://www.facebook.com"><i className="fab fa-facebook text-white"></i> Facebook</a>
-                            <a href="https://www.instagram.com"><i className="fab fa-instagram text-white"></i> Instagram</a>
-                            <a href="https://www.whatsapp.com"><i className="fab fa-whatsapp text-white"></i> WhatsApp</a>
-                            <a href="https://www.telegram.com"><i className="fab fa-telegram text-white"></i> Telegram</a>
+
+                        {/* Contact Us */}
+                        <div className="flex flex-col gap-2 items-center md:items-start">
+                            <h1 className="text-xl md:text-2xl font-bold mb-3">با ما در ارتباط باشید</h1>
+                            <a href="https://www.facebook.com" className="hover:text-black transition-colors">
+                                <i className="fab fa-facebook"></i> Facebook
+                            </a>
+                            <a href="https://www.instagram.com" className="hover:text-black transition-colors">
+                                <i className="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.whatsapp.com" className="hover:text-black transition-colors">
+                                <i className="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.telegram.com" className="hover:text-black transition-colors">
+                                <i className="fab fa-telegram"></i> Telegram
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div className="w-full md:w-1/2 flex flex-col items-center text-center p-5 ">
-                    <h1 className="text-[6vw] md:text-[7vw] font-bold  drop-shadow-lg text-white  md:text-black text-center ">
+
+                {/* Right side: Logo */}
+                <div className="w-full md:w-1/2 flex flex-col items-center text-center p-5">
+                    <h1 className="text-[8vw] md:text-[6vw] font-bold drop-shadow-lg text-white md:text-black">
                         NEW STYLE
                     </h1>
                 </div>
             </div>
-        </div>
-    )
-}
+        </footer>
+    );
+};
+
 export default Footer;
