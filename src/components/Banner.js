@@ -44,7 +44,7 @@ text-center"
                 {/* cart icon */}
                 <Link to={"/cart"} className="flex items-center justify-center">
                     <img
-                        src="/images/cart (2).png"
+                        src={process.env.PUBLIC_URL + '/' + "images/cart (2).png"} 
                         title='سبد خرید'
                         alt="cart icon"
                         className="w-16 md:w-20 hover:scale-105 transition-transform duration-200"
@@ -114,7 +114,8 @@ focus:outline-none text-right w-full pr-10"
             )}
             {/* ====== Banner Image ====== */}
             <div className="flex w-1/2 justify-center z-10">
-                <img src="/images/bannerImage.png" alt="banner" className="sm:w-1/2 mb-2 mt-6 md:mt-0 " />
+                <img src={process.env.PUBLIC_URL + '/' + "images/bannerImage.png"}
+                     alt="banner" className="sm:w-1/2 mb-2 mt-6 md:mt-0 " />
             </div>
             {/* ====== Center Big Text ====== */}
             <div className=" z-20 absolute top-1/3 md:top-1/3  mt-10 md:mt-6 ml-7 text-center w-full px-4">
