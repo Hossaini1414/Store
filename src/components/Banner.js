@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { ArrowLeft, Search } from 'lucide-react';
-import { useCart } from "../components/CartContext";
 
 const Banner = () => {
     const [menuOpen, setMenuOpen] = useState(false);
