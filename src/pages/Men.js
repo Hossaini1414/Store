@@ -1,5 +1,5 @@
 import React from "react";
-import from "../components/ProductCard";
+import ProductCard from "../components/ProductCard";
 import Banner from "../components/Banner";
 import { useCart } from "../components/CartContext";
 import Footer from "../components/Footer";
@@ -19,8 +19,8 @@ const Men = () => {
         { id: 12, image: "/images/menswear (3).jpeg", title: " پیراهن", price: 900 },
         { id: 13, image: "/images/menswear (1).jpeg", title: "پیراهن ", price: 1200 },
         { id: 14, image: "/images/menswear (2).jpeg", title: "کت ", price: 2500 },
-        { id: 13, image: "/images/menswear (3).jpeg", title: "پیراهن ", price: 1200 },
-        { id: 14, image: "/images/menswear (1).jpeg", title: "کت ", price: 2500 },
+        { id: 15, image: "/images/menswear (3).jpeg", title: "پیراهن ", price: 1200 },
+        { id: 16, image: "/images/menswear (1).jpeg", title: "کت ", price: 2500 },
 
     ];
 
@@ -30,8 +30,13 @@ const Men = () => {
             <div className="p-6 bg-white" >
                 <h1 className="text-3xl font-bold mb-6 text-center">لباس مردانه</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    {products.map((p , index) => (
-                        <key={index} image={p.image} title={p.title} price={p.price} />
+                    {products.map((p, index) => (
+                        <ProductCard
+                            key={index}
+                            image={p.image}
+                            title={p.title}
+                            price={p.price}
+                        />
                     ))}
                 </div>
             </div>
