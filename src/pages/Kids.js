@@ -1,11 +1,9 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
 import Banner from "../components/Banner";
-import { useCart } from "../components/CartContext";
 import Footer from "../components/Footer";
 
 const Kids = (image, title, price) => {
-    const { addToCart } = useCart();
     const products = [
         { id: 1, image: "/images/kids (1).jpg", title: "پیراهن دخترانه", price: 1200 },
         { id: 2, image: "/images/kids (2).jpg", title: "پیراهن دخترانه", price: 2500 },

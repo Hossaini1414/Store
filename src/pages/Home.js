@@ -1,5 +1,4 @@
 import React from "react";
-import { CartContext } from "../components/CartContext";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import { useCart } from "../components/CartContext";

@@ -1,5 +1,4 @@
 import React from "react";
-import ProductCard from "../components/ProductCard";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 
